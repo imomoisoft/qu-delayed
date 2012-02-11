@@ -1,0 +1,40 @@
+= qu-delayed
+
+Qu::Delayed is basic sheduler for Qu queue system.
+
+For now it supports only mongodb backend. Contribution for redis are welcome!
+
+== Install
+
+To install just add into your `Gemfile`
+
+    gem 'qu-delayed'
+
+== Usage
+
+With Qu::Delayed you can:
+
+* enqueue job to run _in_ some time (ex: enqueue rebuild job in 5 minutes)
+* enqueue job to run _at_ some time (ex: enqueue refresh stats job at 01:00AM)
+
+=== Enqueue job in some time
+
+It's as simple as:
+
+    Qu.enqueue_in(5.minutes, Rebuild, 'qu-delayed')
+
+== Contributing to qu-delayed
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
+* Fork the project.
+* Start a feature/bugfix branch.
+* Commit and push until you are happy with your contribution.
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Copyright
+
+Copyright (c) 2012 Viacheslav Molokov. See LICENSE.txt for
+further details.
+
