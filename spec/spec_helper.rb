@@ -8,6 +8,7 @@ Spork.prefork do
   $LOAD_PATH.unshift(File.dirname(__FILE__))
   require 'rspec'
   require 'qu/backend/spec'
+  require 'timecop'
 
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.

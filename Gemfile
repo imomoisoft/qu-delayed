@@ -9,7 +9,7 @@ group :development do
   gem "jeweler", "~> 1.8.3"
   gem "rcov", ">= 0"
 
-  gem 'timecop'
+  gem 'timecop', :require => 'timecop'
 
   gem 'spork'
   gem 'guard'
@@ -17,4 +17,5 @@ group :development do
   gem 'guard-spork'
 
   gem 'qu-mongo'
+  gem 'bson_ext', :platforms => :ruby
 end

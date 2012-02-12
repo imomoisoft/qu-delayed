@@ -9,7 +9,7 @@ describe Qu::Backend::Immediate do
     Qu.backend = described_class.new
   end
 
-  context 'should be extended with Qu::Backend::Delayed::Immediate with' do
+  context 'should be extended with Qu::Backend::Delayed::Immediate' do
     it '#enqueue_at' do
       subject.should respond_to(:enqueue_at)
     end

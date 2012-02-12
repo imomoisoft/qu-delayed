@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-require 'timecop'
-
 describe Qu::Delayed do
   context 'should extend Qu with' do
     it 'enqueue_at' do
@@ -10,10 +8,6 @@ describe Qu::Delayed do
 
     it 'enqueue_in' do
       Qu.should respond_to(:enqueue_in)
-    end
-
-    it 'clear_delayed_queue' do
-      Qu.should respond_to(:clear_delayed_queue)
     end
   end
 

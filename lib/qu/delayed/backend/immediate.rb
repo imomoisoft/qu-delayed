@@ -10,11 +10,6 @@ module Qu
       end
     end
   end
-
-  module Backend
-    class Immediate < Base
-      include Delayed::Backend::Immediate
-    end
-  end
 end
 
+Qu::Backend::Immediate.send :include, Qu::Delayed::Backend::Immediate
