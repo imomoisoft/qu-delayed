@@ -9,21 +9,42 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Viacheslav Molokov"]
-  s.date = "2012-02-10"
-  s.description = "TODO: longer description of your gem"
+  s.date = "2012-02-12"
+  s.description = "Qu::Delayed is basic sheduler for Qu queue system."
   s.email = "viacheslav.molokov@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
-    "VERSION"
+    ".document",
+    ".rspec",
+    "Gemfile",
+    "Gemfile.lock",
+    "Guardfile",
+    "LICENSE.txt",
+    "README.rdoc",
+    "Rakefile",
+    "VERSION",
+    "lib/qu-delayed-immediate.rb",
+    "lib/qu-delayed-mongo.rb",
+    "lib/qu-delayed.rb",
+    "lib/qu/delayed.rb",
+    "lib/qu/delayed/backend/immediate.rb",
+    "lib/qu/delayed/backend/mongo.rb",
+    "lib/qu/delayed/payload.rb",
+    "qu-delayed.gemspec",
+    "spec/qu/delayed/backend/immediate_spec.rb",
+    "spec/qu/delayed/backend/mongo_spec.rb",
+    "spec/qu/delayed/payload_spec.rb",
+    "spec/qu/delayed_spec.rb",
+    "spec/spec_helper.rb"
   ]
-  s.homepage = "http://github.com/Imomoi/qu-delayed"
+  s.homepage = "http://github.com/imomoisoft/qu-delayed"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.10"
-  s.summary = "TODO: one-line summary of your gem"
+  s.summary = "Qu::Delayed is basic sheduler for Qu queue system."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -35,11 +56,13 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<timecop>, [">= 0"])
       s.add_development_dependency(%q<spork>, [">= 0"])
       s.add_development_dependency(%q<guard>, [">= 0"])
       s.add_development_dependency(%q<guard-rspec>, [">= 0"])
       s.add_development_dependency(%q<guard-spork>, [">= 0"])
       s.add_development_dependency(%q<qu-mongo>, [">= 0"])
+      s.add_development_dependency(%q<bson_ext>, [">= 0"])
     else
       s.add_dependency(%q<qu>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.8.0"])
@@ -47,11 +70,13 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<timecop>, [">= 0"])
       s.add_dependency(%q<spork>, [">= 0"])
       s.add_dependency(%q<guard>, [">= 0"])
       s.add_dependency(%q<guard-rspec>, [">= 0"])
       s.add_dependency(%q<guard-spork>, [">= 0"])
       s.add_dependency(%q<qu-mongo>, [">= 0"])
+      s.add_dependency(%q<bson_ext>, [">= 0"])
     end
   else
     s.add_dependency(%q<qu>, [">= 0"])
@@ -60,11 +85,13 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<timecop>, [">= 0"])
     s.add_dependency(%q<spork>, [">= 0"])
     s.add_dependency(%q<guard>, [">= 0"])
     s.add_dependency(%q<guard-rspec>, [">= 0"])
     s.add_dependency(%q<guard-spork>, [">= 0"])
     s.add_dependency(%q<qu-mongo>, [">= 0"])
+    s.add_dependency(%q<bson_ext>, [">= 0"])
   end
 end
 

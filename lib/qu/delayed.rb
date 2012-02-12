@@ -1,6 +1,7 @@
 require 'qu'
 
 require 'qu/delayed/payload'
+require 'qu/delayed/worker'
 
 module Qu
   module Delayed

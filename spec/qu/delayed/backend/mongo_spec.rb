@@ -22,6 +22,12 @@ describe Qu::Backend::Mongo do
     end
   end
 
+  it 'should be able to enqueue any amount of tasks to same time' do
+    subject.enqueue_at(payload)
+    subject.enqueue_at(payload)
+    subject.delayed_jobs.count.should == 2
+  end
+
   describe 'enqueued job' do
     before { subject.enqueue_at(payload) }
     let(:delayed_payload) { Qu::Delayed::Payload.new(subject.delayed_jobs.find_one) }
@@ -42,17 +48,15 @@ describe Qu::Backend::Mongo do
   describe 'sheduler' do
     it 'should enqueue job when time comes' do
       payload.run_at = Time.now - 5*60
-      subject.should_receive(:enqueue)
       subject.enqueue_at(payload)
-      subject.next_delayed_job
+      subject.next_delayed_job.should_not be_nil
       subject.delayed_jobs.count.should == 0
     end
 
     it 'should enqueue job when time in the future' do
       payload.run_at = Time.now + 5*60
-      subject.should_not_receive(:enqueue)
       subject.enqueue_at(payload)
-      subject.next_delayed_job
+      subject.next_delayed_job.should be_nil
       subject.delayed_jobs.count.should == 1
     end
   end
