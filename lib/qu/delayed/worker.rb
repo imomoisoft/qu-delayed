@@ -1,3 +1,5 @@
+require 'qu-delayed'
+
 module Qu
   module Delayed
     class Worker
@@ -24,7 +26,7 @@ module Qu
         loop do
           logger.debug { "Getting next delayed job" }
 
-          if payload = Qu.next_delayed_job
+          if payload = Qu.backend.next_delayed_job
             return Qu.backend.enqueue(payload)
           end
 

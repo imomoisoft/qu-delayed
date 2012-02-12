@@ -20,7 +20,7 @@ module Qu
         #
         # If there is no job to enqueue returns +nil+.
         def next_delayed_job
-          doc = delayed_jobs.find_and_modify(:query => {:_id => {'$lte' => BSON::ObjectId.from_time(Time.now) }}, :remove => true)
+          doc = delayed_jobs.find_and_modify(:query => {:_id => {'$lte' => BSON::ObjectId.from_time(Time.now) }}, :remove => true, :safe => true)
           return nil if doc.nil?
 
           Qu::Delayed::Payload.new(doc).undelay
