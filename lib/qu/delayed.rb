@@ -18,3 +18,7 @@ module Qu
 
   extend Delayed
 end
+
+if defined?(Rails)
+  require 'qu/delayed/railtie' if defined?(Rails::Railtie)
+end
