@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "qu-delayed"
-  s.version = "0.1.4"
+  s.version = "0.1.4.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Viacheslav Molokov"]
@@ -33,6 +33,8 @@ Gem::Specification.new do |s|
     "lib/qu/delayed/backend/immediate.rb",
     "lib/qu/delayed/backend/mongo.rb",
     "lib/qu/delayed/payload.rb",
+    "lib/qu/delayed/railtie.rb",
+    "lib/qu/delayed/tasks.rb",
     "lib/qu/delayed/worker.rb",
     "qu-delayed.gemspec",
     "spec/qu/delayed/backend/immediate_spec.rb",
