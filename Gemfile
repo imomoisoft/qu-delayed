@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem 'qu'
+gem 'qu', '= 0.1.4'
 
 group :development do
   gem "rspec", "~> 2.8.0"

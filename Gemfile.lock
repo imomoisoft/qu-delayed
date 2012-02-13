@@ -55,7 +55,7 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   jeweler (~> 1.8.3)
-  qu
+  qu (= 0.1.4)
   qu-mongo
   rcov
   rdoc (~> 3.12)
