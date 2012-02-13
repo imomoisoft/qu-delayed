@@ -1,5 +1,5 @@
 namespace :qu do
-  namespace :delayed
+  namespace :delayed do
     desc "Start a sheduler"
     task :work  => :environment do
       Qu::Delayed::Worker.new.start

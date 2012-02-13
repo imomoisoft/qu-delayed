@@ -9,6 +9,10 @@ describe Qu::Delayed do
     it 'enqueue_in' do
       Qu.should respond_to(:enqueue_in)
     end
+
+    it 'enqueue_in' do
+      Qu.should respond_to(:clear_delayed)
+    end
   end
 
   describe '#enqueue_at' do

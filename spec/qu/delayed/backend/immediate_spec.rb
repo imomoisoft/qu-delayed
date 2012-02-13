@@ -13,6 +13,10 @@ describe Qu::Backend::Immediate do
     it '#enqueue_at' do
       subject.should respond_to(:enqueue_at)
     end
+
+    it '#clear_delayed' do
+      subject.should respond_to(:clear_delayed)
+    end
   end
 
   it 'performs immediately' do

@@ -20,6 +20,10 @@ describe Qu::Backend::Mongo do
     it '#enqueue_at' do
       subject.should respond_to(:enqueue_at)
     end
+
+    it '#clear_delayed' do
+      subject.should respond_to(:clear_delayed)
+    end
   end
 
   it 'should be able to enqueue any amount of tasks to same time' do

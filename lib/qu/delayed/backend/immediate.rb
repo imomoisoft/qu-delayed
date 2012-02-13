@@ -7,6 +7,9 @@ module Qu
         def enqueue_at(payload)
           payload.perform
         end
+
+        def clear_delayed
+        end
       end
     end
   end

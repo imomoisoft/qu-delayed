@@ -14,6 +14,10 @@ module Qu
     def enqueue_in(run_in, klass, *args)
       backend.enqueue_at Qu::Delayed::Payload.new(:klass => klass, :run_at => Time.now + run_in, :args => args)
     end
+
+    def clear_delayed
+      backend.clear_delayed
+    end
   end
 
   extend Delayed
